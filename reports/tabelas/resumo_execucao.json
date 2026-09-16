@@ -1,0 +1,491 @@
+{
+  "executado_em": "2026-09-15T23:37:01",
+  "hiperparametros": {
+    "n_estimators": 205,
+    "max_depth": 8,
+    "learning_rate": 0.095,
+    "subsample": 0.827,
+    "colsample_bytree": 0.902,
+    "random_state": 42
+  },
+  "base": {
+    "linhas": 167791,
+    "colunas": 17,
+    "municipios_distintos": 5173,
+    "pct_alfabetizados": 59.14,
+    "pct_nao_alfabetizados": 40.86
+  },
+  "eda": {
+    "correlacao_spearman_com_target": {
+      "qtd_alunos_escola": 0.0172,
+      "qtd_alunos_municipio": -0.0337,
+      "qtd_escolas_municipio": -0.0428,
+      "w_peso_aluno": -0.0764,
+      "ref_meta_taxa_ano": 0.2481
+    },
+    "taxa_real_por_regiao_pct": {
+      "Norte": 51.19,
+      "Nordeste": 55.38,
+      "Sudeste": 61.29,
+      "Centro-Oeste": 62.73,
+      "Sul": 64.38
+    },
+    "taxa_real_por_rede_pct": {
+      "Privada": {
+        "taxa_pct": 0.0,
+        "alunos": 1
+      },
+      "Municipal": {
+        "taxa_pct": 58.75,
+        "alunos": 149158
+      },
+      "Estadual": {
+        "taxa_pct": 62.25,
+        "alunos": 18632
+      }
+    }
+  },
+  "split": {
+    "linhas_treino": 134232,
+    "linhas_teste": 33559,
+    "features_numericas": [
+      "ano",
+      "qtd_alunos_escola",
+      "qtd_alunos_municipio",
+      "qtd_escolas_municipio",
+      "w_peso_aluno",
+      "ref_meta_taxa_ano"
+    ],
+    "features_categoricas": [
+      "serie",
+      "rede",
+      "sigla_uf",
+      "nome_regiao",
+      "nome_municipio"
+    ]
+  },
+  "metricas": {
+    "roc_auc": 0.6667,
+    "f1_weighted": 0.61,
+    "acuracia": 0.635,
+    "classe_0_nao_alfabetizado": {
+      "precision": 0.5914,
+      "recall": 0.3453,
+      "f1-score": 0.436,
+      "support": 13713.0
+    },
+    "classe_1_alfabetizado": {
+      "precision": 0.6487,
+      "recall": 0.8352,
+      "f1-score": 0.7302,
+      "support": 19846.0
+    },
+    "matriz_confusao": [
+      [
+        4735,
+        8978
+      ],
+      [
+        3271,
+        16575
+      ]
+    ]
+  },
+  "interpretabilidade": {
+    "top10_feature_importance": [
+      {
+        "feature": "sigla_uf_CE",
+        "importance": 0.04730279743671417
+      },
+      {
+        "feature": "sigla_uf_BA",
+        "importance": 0.03956665098667145
+      },
+      {
+        "feature": "nome_regiao_Nordeste",
+        "importance": 0.012881181202828884
+      },
+      {
+        "feature": "sigla_uf_PR",
+        "importance": 0.012709862552583218
+      },
+      {
+        "feature": "sigla_uf_PE",
+        "importance": 0.007311238907277584
+      },
+      {
+        "feature": "sigla_uf_RS",
+        "importance": 0.00654675392434001
+      },
+      {
+        "feature": "nome_regiao_Norte",
+        "importance": 0.006274423561990261
+      },
+      {
+        "feature": "nome_municipio_Rio de Janeiro",
+        "importance": 0.005345379002392292
+      },
+      {
+        "feature": "ref_meta_taxa_ano",
+        "importance": 0.005311812739819288
+      },
+      {
+        "feature": "nome_municipio_Porto Alegre",
+        "importance": 0.005308620166033506
+      }
+    ],
+    "top10_shap": [
+      {
+        "feature": "ref_meta_taxa_ano",
+        "shap_medio_absoluto": 0.14879675209522247
+      },
+      {
+        "feature": "sigla_uf_CE",
+        "shap_medio_absoluto": 0.11814727634191513
+      },
+      {
+        "feature": "w_peso_aluno",
+        "shap_medio_absoluto": 0.1057787761092186
+      },
+      {
+        "feature": "nome_regiao_Nordeste",
+        "shap_medio_absoluto": 0.07865669578313828
+      },
+      {
+        "feature": "sigla_uf_BA",
+        "shap_medio_absoluto": 0.056573908776044846
+      },
+      {
+        "feature": "qtd_escolas_municipio",
+        "shap_medio_absoluto": 0.05375522002577782
+      },
+      {
+        "feature": "sigla_uf_MG",
+        "shap_medio_absoluto": 0.03650886192917824
+      },
+      {
+        "feature": "sigla_uf_PR",
+        "shap_medio_absoluto": 0.03251505643129349
+      },
+      {
+        "feature": "rede_Estadual",
+        "shap_medio_absoluto": 0.031401198357343674
+      },
+      {
+        "feature": "nome_regiao_Norte",
+        "shap_medio_absoluto": 0.03126483038067818
+      }
+    ]
+  },
+  "metas": {
+    "municipios_com_meta": 4890,
+    "municipios_em_risco": 2468,
+    "pct_em_risco": 50.5,
+    "taxa_prevista_por_regiao_pct": {
+      "Norte": 51.7,
+      "Nordeste": 55.65,
+      "Sudeste": 61.33,
+      "Centro-Oeste": 62.85,
+      "Sul": 64.03
+    },
+    "taxa_prevista_por_rede_pct": {
+      "Municipal": 58.91,
+      "Estadual": 61.95
+    },
+    "risco_por_regiao_pct": {
+      "Sul": 68.8,
+      "Nordeste": 58.4,
+      "Norte": 57.5,
+      "Centro-Oeste": 36.8,
+      "Sudeste": 32.1
+    },
+    "meta_media_por_regiao": {
+      "Centro-Oeste": 65.36,
+      "Nordeste": 55.84,
+      "Norte": 50.93,
+      "Sudeste": 63.92,
+      "Sul": 72.23
+    },
+    "top15_municipios": [
+      {
+        "nome_municipio": "São Félix do Tocantins",
+        "sigla_uf": "TO",
+        "nome_regiao": "Norte",
+        "taxa_prevista_pct": 45.90999984741211,
+        "meta": 80.0,
+        "gap_meta": -34.09,
+        "total_alunos": 3
+      },
+      {
+        "nome_municipio": "Severiano Melo",
+        "sigla_uf": "RN",
+        "nome_regiao": "Nordeste",
+        "taxa_prevista_pct": 40.22999954223633,
+        "meta": 72.95,
+        "gap_meta": -32.72,
+        "total_alunos": 6
+      },
+      {
+        "nome_municipio": "Dom Pedro de Alcântara",
+        "sigla_uf": "RS",
+        "nome_regiao": "Sul",
+        "taxa_prevista_pct": 48.86000061035156,
+        "meta": 80.0,
+        "gap_meta": -31.14,
+        "total_alunos": 1
+      },
+      {
+        "nome_municipio": "Sucupira",
+        "sigla_uf": "TO",
+        "nome_regiao": "Norte",
+        "taxa_prevista_pct": 49.18000030517578,
+        "meta": 77.95,
+        "gap_meta": -28.77,
+        "total_alunos": 2
+      },
+      {
+        "nome_municipio": "Junco do Maranhão",
+        "sigla_uf": "MA",
+        "nome_regiao": "Nordeste",
+        "taxa_prevista_pct": 51.40999984741211,
+        "meta": 80.0,
+        "gap_meta": -28.59,
+        "total_alunos": 9
+      },
+      {
+        "nome_municipio": "Malhada de Pedras",
+        "sigla_uf": "BA",
+        "nome_regiao": "Nordeste",
+        "taxa_prevista_pct": 43.54999923706055,
+        "meta": 71.89,
+        "gap_meta": -28.34,
+        "total_alunos": 12
+      },
+      {
+        "nome_municipio": "São Vicente",
+        "sigla_uf": "RN",
+        "nome_regiao": "Nordeste",
+        "taxa_prevista_pct": 37.790000915527344,
+        "meta": 65.76,
+        "gap_meta": -27.97,
+        "total_alunos": 6
+      },
+      {
+        "nome_municipio": "Mariano Moro",
+        "sigla_uf": "RS",
+        "nome_regiao": "Sul",
+        "taxa_prevista_pct": 52.349998474121094,
+        "meta": 80.0,
+        "gap_meta": -27.65,
+        "total_alunos": 1
+      },
+      {
+        "nome_municipio": "Mortugaba",
+        "sigla_uf": "BA",
+        "nome_regiao": "Nordeste",
+        "taxa_prevista_pct": 43.349998474121094,
+        "meta": 70.74,
+        "gap_meta": -27.39,
+        "total_alunos": 15
+      },
+      {
+        "nome_municipio": "Picada Café",
+        "sigla_uf": "RS",
+        "nome_regiao": "Sul",
+        "taxa_prevista_pct": 53.119998931884766,
+        "meta": 80.0,
+        "gap_meta": -26.88,
+        "total_alunos": 2
+      },
+      {
+        "nome_municipio": "Monte do Carmo",
+        "sigla_uf": "TO",
+        "nome_regiao": "Norte",
+        "taxa_prevista_pct": 44.90999984741211,
+        "meta": 71.56,
+        "gap_meta": -26.65,
+        "total_alunos": 7
+      },
+      {
+        "nome_municipio": "Itaporã do Tocantins",
+        "sigla_uf": "TO",
+        "nome_regiao": "Norte",
+        "taxa_prevista_pct": 40.11000061035156,
+        "meta": 66.76,
+        "gap_meta": -26.65,
+        "total_alunos": 8
+      },
+      {
+        "nome_municipio": "Bacuri",
+        "sigla_uf": "MA",
+        "nome_regiao": "Nordeste",
+        "taxa_prevista_pct": 43.52000045776367,
+        "meta": 69.66,
+        "gap_meta": -26.14,
+        "total_alunos": 14
+      },
+      {
+        "nome_municipio": "Tanhaçu",
+        "sigla_uf": "BA",
+        "nome_regiao": "Nordeste",
+        "taxa_prevista_pct": 36.4900016784668,
+        "meta": 62.26,
+        "gap_meta": -25.77,
+        "total_alunos": 13
+      },
+      {
+        "nome_municipio": "São Gonçalo do Amarante",
+        "sigla_uf": "RN",
+        "nome_regiao": "Nordeste",
+        "taxa_prevista_pct": 31.229999542236328,
+        "meta": 56.91,
+        "gap_meta": -25.68,
+        "total_alunos": 85
+      }
+    ],
+    "amostra_robusta": {
+      "min_alunos": 30,
+      "municipios_avaliados": 1081,
+      "municipios_em_risco": 575,
+      "pct_em_risco": 53.2,
+      "top15_municipios": [
+        {
+          "nome_municipio": "São Gonçalo do Amarante",
+          "sigla_uf": "RN",
+          "nome_regiao": "Nordeste",
+          "taxa_prevista_pct": 31.229999542236328,
+          "meta": 56.91,
+          "gap_meta": -25.68,
+          "total_alunos": 85
+        },
+        {
+          "nome_municipio": "Igrejinha",
+          "sigla_uf": "RS",
+          "nome_regiao": "Sul",
+          "taxa_prevista_pct": 54.630001068115234,
+          "meta": 80.0,
+          "gap_meta": -25.37,
+          "total_alunos": 30
+        },
+        {
+          "nome_municipio": "Lajeado",
+          "sigla_uf": "RS",
+          "nome_regiao": "Sul",
+          "taxa_prevista_pct": 52.279998779296875,
+          "meta": 75.49,
+          "gap_meta": -23.21,
+          "total_alunos": 77
+        },
+        {
+          "nome_municipio": "Farroupilha",
+          "sigla_uf": "RS",
+          "nome_regiao": "Sul",
+          "taxa_prevista_pct": 57.83000183105469,
+          "meta": 80.0,
+          "gap_meta": -22.17,
+          "total_alunos": 84
+        },
+        {
+          "nome_municipio": "São Borja",
+          "sigla_uf": "RS",
+          "nome_regiao": "Sul",
+          "taxa_prevista_pct": 45.709999084472656,
+          "meta": 67.78,
+          "gap_meta": -22.07,
+          "total_alunos": 42
+        },
+        {
+          "nome_municipio": "Canela",
+          "sigla_uf": "RS",
+          "nome_regiao": "Sul",
+          "taxa_prevista_pct": 57.97999954223633,
+          "meta": 78.87,
+          "gap_meta": -20.89,
+          "total_alunos": 58
+        },
+        {
+          "nome_municipio": "Campo Bom",
+          "sigla_uf": "RS",
+          "nome_regiao": "Sul",
+          "taxa_prevista_pct": 57.02000045776367,
+          "meta": 77.73,
+          "gap_meta": -20.71,
+          "total_alunos": 66
+        },
+        {
+          "nome_municipio": "Nova Viçosa",
+          "sigla_uf": "BA",
+          "nome_regiao": "Nordeste",
+          "taxa_prevista_pct": 39.70000076293945,
+          "meta": 60.29,
+          "gap_meta": -20.59,
+          "total_alunos": 51
+        },
+        {
+          "nome_municipio": "Santa Cecília",
+          "sigla_uf": "SC",
+          "nome_regiao": "Sul",
+          "taxa_prevista_pct": 48.130001068115234,
+          "meta": 68.59,
+          "gap_meta": -20.46,
+          "total_alunos": 34
+        },
+        {
+          "nome_municipio": "São Lourenço do Sul",
+          "sigla_uf": "RS",
+          "nome_regiao": "Sul",
+          "taxa_prevista_pct": 59.029998779296875,
+          "meta": 79.22,
+          "gap_meta": -20.19,
+          "total_alunos": 32
+        },
+        {
+          "nome_municipio": "Matões",
+          "sigla_uf": "MA",
+          "nome_regiao": "Nordeste",
+          "taxa_prevista_pct": 53.66999816894531,
+          "meta": 73.54,
+          "gap_meta": -19.87,
+          "total_alunos": 34
+        },
+        {
+          "nome_municipio": "Ijuí",
+          "sigla_uf": "RS",
+          "nome_regiao": "Sul",
+          "taxa_prevista_pct": 57.25,
+          "meta": 77.0,
+          "gap_meta": -19.75,
+          "total_alunos": 66
+        },
+        {
+          "nome_municipio": "Canguçu",
+          "sigla_uf": "RS",
+          "nome_regiao": "Sul",
+          "taxa_prevista_pct": 60.40999984741211,
+          "meta": 79.74,
+          "gap_meta": -19.33,
+          "total_alunos": 35
+        },
+        {
+          "nome_municipio": "Bento Gonçalves",
+          "sigla_uf": "RS",
+          "nome_regiao": "Sul",
+          "taxa_prevista_pct": 58.47999954223633,
+          "meta": 77.77,
+          "gap_meta": -19.29,
+          "total_alunos": 94
+        },
+        {
+          "nome_municipio": "Brumado",
+          "sigla_uf": "BA",
+          "nome_regiao": "Nordeste",
+          "taxa_prevista_pct": 38.7400016784668,
+          "meta": 57.7,
+          "gap_meta": -18.96,
+          "total_alunos": 53
+        }
+      ]
+    }
+  },
+  "duracao_segundos": 49.5
+}

@@ -14,3 +14,7 @@ venv/
 *.csv
 landing/
 !data_samples/*.csv
+
+# Resultados versionaveis: as tabelas geradas em reports/ fazem parte da entrega
+!reports/**/*.csv
+!reports/**/*.json

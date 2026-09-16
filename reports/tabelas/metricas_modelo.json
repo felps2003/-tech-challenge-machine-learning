@@ -1,0 +1,35 @@
+{
+  "roc_auc": 0.6667,
+  "f1_weighted": 0.61,
+  "acuracia": 0.635,
+  "classe_0_nao_alfabetizado": {
+    "precision": 0.5914,
+    "recall": 0.3453,
+    "f1-score": 0.436,
+    "support": 13713.0
+  },
+  "classe_1_alfabetizado": {
+    "precision": 0.6487,
+    "recall": 0.8352,
+    "f1-score": 0.7302,
+    "support": 19846.0
+  },
+  "matriz_confusao": [
+    [
+      4735,
+      8978
+    ],
+    [
+      3271,
+      16575
+    ]
+  ],
+  "hiperparametros": {
+    "n_estimators": 205,
+    "max_depth": 8,
+    "learning_rate": 0.095,
+    "subsample": 0.827,
+    "colsample_bytree": 0.902,
+    "random_state": 42
+  }
+}
