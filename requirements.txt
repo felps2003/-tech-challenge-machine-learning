@@ -1,10 +1,26 @@
-pandas==2.2.2
-numpy==1.26.4
-scikit-learn==1.4.2
-xgboost==2.0.3
-lightgbm==4.3.0
-shap==0.45.0
-matplotlib==3.8.4
+# Versões efetivamente utilizadas na execução que gerou os resultados de
+# reports/ e images/ (ambiente .venv, Python 3.12).
+
+# Extração da camada Gold (notebook 01)
+google-cloud-bigquery==3.45.1
+pydata-google-auth==1.9.1
+db-dtypes==1.7.1
+python-dotenv==1.2.3
+
+# Manipulação de dados
+pandas==3.0.5
+numpy==2.5.3
+pyarrow==25.0.1
+scipy==1.18.1
+
+# Modelagem e avaliação
+scikit-learn==1.9.1
+xgboost==3.4.1
+shap==0.52.0
+
+# Visualização
+matplotlib==3.11.2
 seaborn==0.13.2
-pyarrow==15.0.2
-notebook==7.1.2
+
+# Execução dos notebooks
+ipykernel==7.3.0
