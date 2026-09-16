@@ -1,5 +1,7 @@
 # Tech Challenge Fase 3 — Predição e Inteligência Analítica para Alfabetização no Brasil
 
+Link [vídeo apresentação executiva Projetos]: https://www.youtube.com/watch?v=blFwum69Bcs
+
 Modelo supervisionado que prevê se um aluno será considerado **alfabetizado** ou
 **não alfabetizado** a partir de variáveis educacionais e territoriais, com
 tradução dos resultados em inteligência aplicável à política pública.
